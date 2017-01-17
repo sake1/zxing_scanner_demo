@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.demo.zxing.zxing_scanner_demo.RootActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DEFAULT BARCODE SCANNER"
+        android:layout_margin="30dp"
+        android:id="@+id/root_option_1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DEFAULT QR CODE SCANNER"
+        android:layout_margin="30dp"
+        android:id="@+id/root_option_2"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CUSTOM BARCODE SCANNER"
+        android:layout_margin="30dp"
+        android:id="@+id/root_option_3"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CUSTOM QR CODE SCANNER"
+        android:layout_margin="30dp"
+        android:id="@+id/root_option_4"/>
+
+</LinearLayout>

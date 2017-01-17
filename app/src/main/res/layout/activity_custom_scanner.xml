@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_custom_barcode_scanner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.demo.zxing.zxing_scanner_demo.CustomScanner">
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:layout_width="375dp"
+        android:layout_height="625dp"
+        android:id="@+id/barcode_scanner"
+        android:layout_gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="#FFFFFF"
+            android:text="This is a simple masking created by the custom layout"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="#FFFFFF"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+</FrameLayout>
