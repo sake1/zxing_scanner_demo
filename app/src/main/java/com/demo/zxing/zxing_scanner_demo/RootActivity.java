@@ -1,10 +1,14 @@
 package com.demo.zxing.zxing_scanner_demo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 public class RootActivity extends AppCompatActivity {
 
@@ -114,5 +118,29 @@ public class RootActivity extends AppCompatActivity {
                 integrator.initiateScan();
             }
         });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        /**
+         * onActivityResult is used to handle callbacks from those scanner
+         * when they successfuly scan something they will return to the activity that call them
+         * with a bundle of data containing information
+         * we can habdle those information here, in onActivityResult
+         */
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == IntentIntegrator.REQUEST_CODE) {
+            /**
+             * IntentIntegrator.REQUEST_CODE is used to make sure that the callback is indeed
+             * from our scanner, not from another activity
+             */
+            if (resultCode == RESULT_OK) {
+                IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+                Toast.makeText(RootActivity.this, "Scan successed!", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 }
