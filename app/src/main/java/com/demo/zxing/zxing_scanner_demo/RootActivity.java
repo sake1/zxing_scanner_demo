@@ -81,7 +81,7 @@ public class RootActivity extends AppCompatActivity {
                 integrator.setCaptureActivity(CustomScanner.class);
                 /**
                  * In this case it is CustomScanner, a class that extend CaptureActivity
-                 * that we define by ourself
+                 * that defined in this application
                  */
 
                 integrator.initiateScan();
@@ -112,7 +112,7 @@ public class RootActivity extends AppCompatActivity {
                 integrator.setCaptureActivity(CustomScanner.class);
                 /**
                  * In this case it is CustomScanner, a class that extend CaptureActivity
-                 * that we define by ourself
+                 * that defined in this application
                  */
 
                 integrator.initiateScan();
@@ -126,7 +126,7 @@ public class RootActivity extends AppCompatActivity {
          * onActivityResult is used to handle callbacks from those scanner
          * when they successfuly scan something they will return to the activity that call them
          * with a bundle of data containing information
-         * we can habdle those information here, in onActivityResult
+         * we can handle those information here, in onActivityResult
          */
 
         super.onActivityResult(requestCode, resultCode, data);
@@ -134,11 +134,11 @@ public class RootActivity extends AppCompatActivity {
         if (requestCode == IntentIntegrator.REQUEST_CODE) {
             /**
              * IntentIntegrator.REQUEST_CODE is used to make sure that the callback is indeed
-             * from our scanner, not from another activity
+             * from the scanner, not from another activity
              */
             if (resultCode == RESULT_OK) {
                 IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-                Toast.makeText(RootActivity.this, "Scan successed!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RootActivity.this, "Scan success!", Toast.LENGTH_SHORT).show();
             }
         }
 
