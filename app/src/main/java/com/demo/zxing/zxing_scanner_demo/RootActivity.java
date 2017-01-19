@@ -1,14 +1,18 @@
 package com.demo.zxing.zxing_scanner_demo;
 
 import android.content.Intent;
+import android.provider.DocumentsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.journeyapps.barcodescanner.BarcodeView;
+import com.journeyapps.barcodescanner.camera.CameraManager;
 
 public class RootActivity extends AppCompatActivity {
 
@@ -46,18 +50,21 @@ public class RootActivity extends AppCompatActivity {
         findViewById(R.id.root_option_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IntentIntegrator integrator = new IntentIntegrator(RootActivity.this);
+                Intent intent = new Intent(RootActivity.this, SimpleScanner.class);
+                startActivity(intent);
+//                IntentIntegrator integrator = new IntentIntegrator(RootActivity.this);
+//                integrator.setCaptureActivity(SimpleScanner.class);
 
                 /**
                  * this following code will specify what kind of barcode the scanner is going to look for
                  * if not specified, it will defaultly accept all kind of barcode
                  */
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+//                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
                 /**
                  * IntentIntegrator.QR_CODE_TYPES means it will look for the 2 dimensional barcode types
                  */
 
-                integrator.initiateScan();
+//                integrator.initiateScan();
             }
         });
 
